@@ -8,20 +8,19 @@ class App extends Component{
 	constructor(){
 		super()
 		this.state = {
-			data: {}
+			data: {},
 		}
 	}
 	
-
 	async componentDidMount (){
 		const fetchedData = await fetchData();
-		this.setState({data: fetchedData})
-		console.log(data);
+		this.setState({ data: fetchedData });
+		console.log(this.state.data);
 	}
 
 
 	render(){
-		const { data } = this.state
+		const { data } = this.state;
 		return(
 			<div className = {styles.container}>
 				<Cards data ={ data }  />
